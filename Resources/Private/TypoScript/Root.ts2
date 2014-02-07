@@ -1,0 +1,12 @@
+prototype(MR.ContentCollection:ContentCollection) < prototype(TYPO3.Neos:ContentCollection)
+
+prototype(MR.ContentCollection:SomeNodeType) < prototype(TYPO3.Neos:Content) {
+	node = ${node}
+
+	neosCollection = TYPO3.Neos:ContentCollection {
+    	nodePath = 'neosCollection'
+    }
+	customCollection = MR.ContentCollection:ContentCollection {
+		nodePath = 'customCollection'
+	}
+}

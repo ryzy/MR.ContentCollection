@@ -1,0 +1,54 @@
+#
+# Add some properties to Neos ContentCollection
+#
+'TYPO3.Neos:ContentCollection':
+  ui:
+    inspector:
+      groups:
+        options:
+          label: 'Neos ContentCollection properties'
+          position: 5
+  properties:
+    testProperty:
+      type: string
+      ui:
+        label: 'test property'
+        inspector:
+          group: 'options'
+    anotherTestProperty:
+      type: boolean
+      ui:
+        label: 'another test property'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+
+'MR.ContentCollection:ContentCollection':
+  superTypes: ['TYPO3.Neos:ContentCollection']
+  ui:
+    label: 'My Content Collection'
+    icon: 'icon-sign-blank'
+    inspector:
+      groups:
+        optionsMR:
+          label: 'MR.ContentCollection properties'
+          position: 5
+  properties:
+    yetAnotherProperty:
+      type: string
+      ui:
+        label: 'Yet another property'
+        inspector:
+          group: 'optionsMR'
+
+'MR.ContentCollection:SomeNodeType':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'MR.SomeNodeType'
+    icon: 'icon-th-large'
+    group: 'structure'
+  childNodes:
+    neosCollection:
+      type: 'TYPO3.Neos:ContentCollection'
+    customCollection:
+      type: 'MR.ContentCollection:ContentCollection'
