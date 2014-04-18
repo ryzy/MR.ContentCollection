@@ -1,6 +1,6 @@
 {
     "name": "mr/contentcollection",
-    "type": "typo3-flow-package",
+    "type": "typo3-flow-plugin",
     "description": "Add description here",
     "require": {
         "typo3/neos-nodetypes": "*"
